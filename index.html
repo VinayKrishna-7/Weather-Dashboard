@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🌤 Real-Time Weather Dashboard</h1>
+
+    <div class="search-container">
+        <input
+            type="text"
+            id="cityInput"
+            placeholder="Enter city name..."
+        >
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <div id="loading" class="loading hidden">
+        Loading weather data...
+    </div>
+
+    <div id="error" class="error"></div>
+
+    <div id="weatherCard" class="weather-card hidden">
+
+        <h2 id="location"></h2>
+
+        <div class="weather-main">
+            <img id="weatherIcon" src="" alt="">
+            <h1 id="temperature"></h1>
+        </div>
+
+        <p id="description"></p>
+
+        <div class="weather-details">
+
+            <div class="detail-box">
+                <h3>Humidity</h3>
+                <p id="humidity"></p>
+            </div>
+
+            <div class="detail-box">
+                <h3>Wind Speed</h3>
+                <p id="wind"></p>
+            </div>
+
+            <div class="detail-box">
+                <h3>Feels Like</h3>
+                <p id="feelsLike"></p>
+            </div>
+
+            <div class="detail-box">
+                <h3>Pressure</h3>
+                <p id="pressure"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
