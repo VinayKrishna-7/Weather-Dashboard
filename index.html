@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Skycast — Real-Time Weather</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-orbs">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <main class="app">
+    <header class="app-header">
+      <div class="brand">
+        <span class="logo">⛅</span>
+        <div>
+          <h1>Skycast</h1>
+          <p class="tagline">Real-time weather, beautifully simple</p>
+        </div>
+      </div>
+      <div class="clock" id="clock">--:--</div>
+    </header>
+
+    <section class="search-card">
+      <div class="search-container">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="cityInput" placeholder="Search city (e.g. Tokyo, Paris, Mumbai)" autocomplete="off" />
+        <button id="searchBtn" class="btn-primary">Search</button>
+        <button id="locBtn" class="btn-ghost" title="Use my location">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="quick-cities" id="quickCities">
+        <span class="chip-label">Try:</span>
+        <button class="chip" data-city="London">London</button>
+        <button class="chip" data-city="New York">New York</button>
+        <button class="chip" data-city="Tokyo">Tokyo</button>
+        <button class="chip" data-city="Dubai">Dubai</button>
+        <button class="chip" data-city="Sydney">Sydney</button>
+      </div>
+    </section>
+
+    <div id="loading" class="loading hidden">
+      <span class="spinner"></span> Fetching weather…
+    </div>
+
+    <div id="error" class="error hidden"></div>
+
+    <section id="weatherCard" class="weather-card hidden">
+      <div class="weather-hero">
+        <div class="location-block">
+          <h2 id="location">—</h2>
+          <p id="dateText" class="muted"></p>
+        </div>
+        <div class="temp-block">
+          <img id="weatherIcon" src="" alt="" />
+          <div>
+            <h1 id="temperature">--°</h1>
+            <p id="description" class="desc">—</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="weather-details">
+        <div class="detail-box">
+          <div class="detail-icon">🌡️</div>
+          <h3>Feels Like</h3>
+          <p id="feelsLike">--°</p>
+        </div>
+        <div class="detail-box">
+          <div class="detail-icon">💧</div>
+          <h3>Humidity</h3>
+          <p id="humidity">--%</p>
+        </div>
+        <div class="detail-box">
+          <div class="detail-icon">💨</div>
+          <h3>Wind</h3>
+          <p id="wind">-- m/s</p>
+        </div>
+        <div class="detail-box">
+          <div class="detail-icon">🧭</div>
+          <h3>Pressure</h3>
+          <p id="pressure">-- hPa</p>
+        </div>
+        <div class="detail-box">
+          <div class="detail-icon">🌅</div>
+          <h3>Sunrise</h3>
+          <p id="sunrise">--:--</p>
+        </div>
+        <div class="detail-box">
+          <div class="detail-icon">🌇</div>
+          <h3>Sunset</h3>
+          <p id="sunset">--:--</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="app-footer">Powered by OpenWeather · Built with ♥</footer>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
